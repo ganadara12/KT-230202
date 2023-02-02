@@ -1,0 +1,15 @@
+def cycle_length(n):
+    count = 0
+    num = n
+    while True:
+        count += 1
+        first_digit = num // 10
+        second_digit = num % 10
+        new_num = (second_digit * 10) + ((first_digit + second_digit) % 10)
+        if new_num == n:
+            break
+        num = new_num
+    return count
+
+n = int(input())
+print(cycle_length(n))
